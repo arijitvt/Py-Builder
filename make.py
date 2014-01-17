@@ -1,10 +1,12 @@
 #from subprocess import call
+#!/usr/bin/python
 import os
 
 cc="g++"
 target="output"
-srcs=["test.cpp","base.cpp"]
-cflags="-c"
+src_dir="src"
+srcs=["main.cpp","base.cpp"]
+cflags="-c -I."
 build_dir="build"
 link_flag=""
 blank=" "
@@ -13,15 +15,18 @@ blank=" "
 
 def compile():
 	compile_string = cc+" "+cflags
-	for s in srcs:
-		filename=""
-		if s.endswith(".cpp") :
-			filename=s[:-4]
-		elif s.endswith(".c"):
-			filename=s[:-2]
+	if(os.path.isdir("./"+src_dir)) :
+			os.chdir(src_dir);
+			for s in srcs:
+				filename=""
+				if s.endswith(".cpp") :
+					filename=s[:-4]
+				elif s.endswith(".c"):
+					filename=s[:-2]
 
-		print("Compiling: "+filename);
-		os.system(compile_string+" "+s+" -o ./"+build_dir+"/"+filename+".o")
+				print("Compiling: "+filename);
+				os.system(compile_string+" "+s+" -o ../"+build_dir+"/"+filename+".o")
+			os.chdir("../")
 
 
 def clean():
