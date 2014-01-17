@@ -1,8 +1,8 @@
-#include <base.h>
+#include <derived.h>
 
 int main() {
 
-	Base b;
+	Derived b;
 	b.setName("Test class");
 	cout<<b.getName()<<endl;
 	return 0;

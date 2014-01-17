@@ -5,7 +5,7 @@ import os
 cc="g++"
 target="output"
 src_dir="src"
-srcs=["main.cpp","base.cpp"]
+srcs=["derived.cpp","main.cpp","base.cpp"]
 cflags="-c -I."
 build_dir="build"
 link_flag=""
