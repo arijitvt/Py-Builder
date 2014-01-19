@@ -1,2 +1,3 @@
 *.pyc
 *.ropeprojecct
+build/*.o
