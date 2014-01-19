@@ -1,0 +1,3 @@
+There nothing to install here.
+
+Just run python make.py (Prithwi may make this better). It will compile all the files in the source directory listed in the array src in make.py and put all the object files and output inside the build directory.

@@ -54,8 +54,19 @@ def link():
 
 
 
-compile();
-link();
+def check_file_access_time():
+	if(os.path.isdir("./"+src_dir)):
+		os.chdir(src_dir);
+		for files in os.listdir(os.getcwd()):
+			modf_time = os.stat(files).st_mtime;
+			print modf_time;
+
+		os.chdir("../");
+
+
+check_file_access_time();
+#compile();
+#link();
 #clean();
 
 
